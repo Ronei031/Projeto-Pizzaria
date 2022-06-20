@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Pizzaria</title>
+
+    <h1 class="bv">Bem vindo a Pizzaria do Ronei</h1>
+    <table border="1">
+        
+        <thead><tr class="title">
+        <td>Código </td>
+        <td>Descrição</td>
+        <td>Pizza Média</td>
+        <td>Pizza Grande</td>
+        </tr></thead>
+
+        <tbody>
+        <tr>
+            <td>21</td>
+            <td>Napolitana</td>
+            <td>R$ 20,00 </td>
+            <td>R$ 26,00 </td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>Margherita</td>
+            <td>R$ 20,00 </td>
+            <td>R$ 26,00 </td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>Calabresa</td>
+            <td>R$ 25,00 </td>
+            <td>R$ 32,50 </td>
+        </tr>
+
+        <tr>
+            <td>24</td>
+            <td>Toscana</td>
+            <td>R$ 30,00 </td>
+            <td>R$ 39,00 </td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>Portuguesa</td>
+            <td>R$ 30,00 </td>
+            <td>R$ 39,00 </td>
+        </tr>
+        </tbody>
+    </table>
+    <p>Qual o tamanho da Pizza que deseja (M/G): </p>
+    <input type="text" name="tamanho" id="tamanho">
+
+    <p>Digite o código do sabor desejado: </p>
+    <input type="number" name="codigo" id="codigo">
+    
+    
+    <input type="button" value="Pedir" onclick="pedido()">
+    
+    <div id='res'>Resultado do pedido</div> <br>
+    <div id="vconta"></div> <br>
+    <input type="button" value="Adicionar mais itens " onclick="add()">
+    <input type="button" value="Fechar a Conta"onclick= "conta()">
+    <style>
+
+        body{
+        font: normal 10pt Verdana;
+        width: 500px;
+        height: 100px;
+        margin: auto;
+        padding: 3%;  
+}
+.title{
+    font-style: normal;
+}
+
+
+    </style>   
+</head>
+<body>
+    <script>
+        function pedido() {
+
+            var tamanho = document.getElementById('tamanho').value;
+            var codigo = document.getElementById('codigo').value;
+            
+            if (tamanho == 'g' && codigo == 21) {
+                res.innerHTML = 'Você escolheu a pizza grande de Napolitana! ';
+                vconta.innerHTML = 'Valor total : R$ 26,00 '; 
+            } 
+            else if(tamanho == 'g' && codigo == 22){
+                res.innerHTML = 'Você escolheu a pizza grande de Marguerita! ';
+                vconta.innerHTML = 'Valor total : R$ 26,00 '
+            }
+            else if(tamanho == 'g' && codigo == 23){
+                res.innerHTML = 'Você escolheu a pizza grande de Calabresa! ';
+                vconta.innerHTML = 'Valor total : R$ 32,50 '
+            }
+            else if(tamanho == 'g' && codigo == 24){
+                res.innerHTML = 'Você escolheu a pizza grande de Toscana! ';
+                vconta.innerHTML = 'Valor total : R$ 39,00 '
+            }
+            else if(tamanho == 'g' && codigo == 25){
+                res.innerHTML = 'Você escolheu a pizza grande de Portuguesa ! ';
+                vconta.innerHTML = 'Valor total : R$ 39,00 '
+            }
+            else if (tamanho == 'm' && codigo == 21) {
+                res.innerHTML = 'Você escolheu a pizza média de Napolitana! ';
+                vconta.innerHTML = 'Valor total : R$ 20,00 '
+            }
+            else if(tamanho == 'm' && codigo == 22){
+                res.innerHTML = 'Você escolheu a pizza média de Marguerita! ';
+                vconta.innerHTML = 'Valor total : R$ 20,00 '
+            }
+            else if(tamanho == 'm' && codigo == 23){
+                res.innerHTML = 'Você escolheu a pizza média de Calabresa! ';
+                vconta.innerHTML = 'Valor total : R$ 25,00 '
+            }
+            else if(tamanho == 'm' && codigo == 24){
+                res.innerHTML = 'Você escolheu a pizza média de Toscana! ';
+                vconta.innerHTML = 'Valor total : R$ 30,00 '
+            }
+            else if(tamanho == 'm' && codigo == 25){
+                res.innerHTML = 'Você escolheu a pizza média de Portuguesa ! ';
+                vconta.innerHTML = 'Valor total : R$ 30,00 '
+            }
+            else{
+                res.innerHTML= 'Tamanho ou codigo de pizza inválido'
+            }
+        }
+        function conta(){
+            var conta = document.getElementById('vconta').value
+            var tamanho = document.getElementById('tamanho').value;
+            var codigo = document.getElementById('codigo').value; 
+        }
+
+    </script>
+
+
+
+
+</body>
+</html>
